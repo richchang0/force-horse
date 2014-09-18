@@ -13,7 +13,9 @@ var walk_the_DOM = function walk(node, func) {
 walk_the_DOM(document.body, function(node) {
   if(node.nodeType == 3) { //text node
     old_text = node.nodeValue;
-    new_text = old_text.replace(/force/gi,'horse');
+    new_text = old_text.replace(/force/g,'horse').replace(/Force/g,'Horse').replace(/force/gi,'horse');
     node.nodeValue = new_text;
   }
 });
+
+console.log("loaded");
